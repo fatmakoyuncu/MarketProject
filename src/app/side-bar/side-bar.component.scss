@@ -1,0 +1,41 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+
+    .vegatables, .milk, .meat, .drink, .care, .cleaning, .baby, .stationery{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px;
+        padding-left: 25px;
+        border-bottom: 0.5px solid rgb(205, 126, 245);
+        border-radius: 3px;
+        background: rgb(166, 73, 253);
+
+        .header{
+            width: 130px;
+        }
+        .icon, .header, .arrow{
+            padding: 8px;
+            color: white;
+            fill: white;
+            font-size: 18px;
+            font-family: 'Roboto Slab', serif;
+        }
+        :hover{
+            // cursor: pointer;
+            color: rgb(166, 73, 253);
+            fill: rgb(166, 73, 253);
+        }
+        
+    }
+    :hover{
+        cursor: pointer;
+        background: white;
+        // margin-left: -16px;
+        border-radius: 4px;
+        border: white;
+    }
+    
+}

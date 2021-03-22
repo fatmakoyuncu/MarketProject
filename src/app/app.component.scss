@@ -1,0 +1,191 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    background: rgb(166, 73, 253);
+    margin-top: 0px;
+    height: 70px;
+    box-shadow: 0 2px 4px rgb(233, 210, 255);
+    z-index: 2;
+
+    .side{
+        padding: 10px;
+        margin-left: 20px;
+
+        button{
+            outline: none;
+            border: none;
+            background: none;
+            
+           svg:hover{
+               cursor: pointer;
+                fill: white;
+            }
+        }
+    }
+
+    .header{
+        margin-left: 95px;
+        color: white;
+    }
+
+    .search{
+        display: flex;
+        align-items: center;
+        margin-left: 250px;
+
+        input{
+            height: 25px;
+            width: 300px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        button{
+            border: none;
+            outline: none;
+            background: none;
+            width: 40px;
+            :hover{
+                cursor: pointer;
+                fill: white;
+                width: 25px;
+                height: 25px;
+            }
+        }        
+    }
+
+    .in{
+        display: flex;
+        margin-left: 180px;
+
+        .singin>button{
+            border: none;
+            outline: none;
+            background: none;
+            padding: 10px;
+            font-family: 'Roboto Slab', serif;
+            font-weight: bold;
+            font-size: 17px;
+            color: white;
+        }
+        button:hover{
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .login>button{
+            border: none;
+            outline: none;
+            background: none;
+            padding: 10px;
+            font-family: 'Roboto Slab', serif;
+            font-weight: bold;
+            font-size: 17px;
+            color: white;
+        }
+        button:hover{
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+}
+
+.content{
+    display: flex;
+    
+    .side{
+        width: 30%;
+    }
+    
+.content{
+    display: flex;
+    justify-content: space-between;
+
+    .main{
+        width: 100%;
+        
+        img{
+            margin-top: 20px;
+        }
+
+        .product{
+
+            .product-list{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+         
+            .info{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid #f1f1f1;
+                background: white;
+                border-radius: 4px;
+
+                p{
+                    font-size: 18px;
+                    font-family: Montserrat;
+                }
+
+                hr{
+                    width: 90%;
+                }
+
+                .price{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 80%;
+
+                    .p-sale{
+                        background: hsla(0, 86%, 57%, 1);
+                        padding: 5px;
+                        border-radius: 3px;
+                        color: white;
+                        font-size: 15px;
+                    }
+
+                    .p-price{
+                        background: hsla(145, 63%, 40%,1);
+                        padding: 8px 15px 8px 15px;
+                        border-radius: 3px;
+                        color: white;
+                    }
+                }
+            }
+
+            .add{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+
+                button{
+                    width: 100%;
+                    height: 35px;
+                    border:none;
+                    outline: none;
+                    background: hsla(56, 92%, 53%,0.8);
+                    border-radius: 3px;
+                    font-size: 18px;
+                    color: rgb(78, 78, 78);
+                    font-family:  Montserrat;
+                    font-weight: bold;
+                }
+            }
+        }
+        }
+
+       
+    }
+}
+
+// .sidebar{
+//     z-index: 1;
+// }
+}
