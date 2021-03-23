@@ -74,10 +74,12 @@
 
 <div class="content">
     <div class="side">
-        <app-side-bar></app-side-bar>
+        <app-side-bar (event) = "fruitFromChild($event)"></app-side-bar>
     </div>
     <div class="main">
         <div class="content">
+         
+
             <div class="main">
                 <div class="slider">
                     <img src="https://market.eticaret.webdeneme.com/siteler/market/image/catalog/banner1.jpg" height="315px"
@@ -106,7 +108,7 @@
             </div>
         
         </div>
-        <div class="info"></div>
+        <div class="info"> {{name}}</div>
     </div>
 
 </div>
