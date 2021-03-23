@@ -13,50 +13,57 @@ export class SideBarComponent implements OnInit {
   @Output() event: EventEmitter<any> = new EventEmitter();
 
   url = "http://localhost:3000/";
+  categoryURL = "http://localhost:3000/categories";
   productList: any;
-  list: any;
+  categoryList: any;
 
-  aList: any;
 
   constructor(private http: HttpClient) { }
 
 
   ngOnInit(): void {
-  }
+    this.http.get<any>(this.categoryURL).subscribe(data => {
+      this.categoryList = data;
 
-
-
-
-  sendFruit() {
-    this.http.get<any>(this.url).subscribe(data => {
-      this.productList = data;
-
-
-      const result = this.productList.filter(p => p.category_id == 1);
-
-      console.log(result[0]);
-      
-      
-      this.list = []
-
-      // for (let i = 0; i < result.length; i++) {
-
-      //   this.list += result[i].product_name + result[i].price;
-     
-      // }
-     
-
-
-        // console.log(this.list);
-
-
-      this.event.emit(result)
-
-
-
+      console.log(data);
 
     })
   }
+
+  clicked() {
+    
+    this.http.get<any>(this.url).subscribe(data => {
+      this.productList = data;
+
+      const result = this.productList.filter( p => {
+        p.category_id == this.categoryList;
+      
+      })
+      console.log(result);
+      
+      this.event.emit(result)
+    })
+
+  }
+
+  // sendFruit() {
+  //   this.http.get<any>(this.url).subscribe(data => {
+  //     this.productList = data;
+
+  //     const result = this.productList.filter(p => p.category_id == 1);
+  //     this.event.emit(result)
+
+  //   })
+  // }
+
+  // sendMeat() {
+  //   this.http.get<any>(this.url).subscribe(data => {
+  //     this.productList = data;
+
+  //     const result = this.productList.filter(p => p.category_id == 2)
+  //     this.event.emit(result)
+  //   })
+  // }
 
 
 }
