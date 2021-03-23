@@ -108,7 +108,10 @@
             </div>
         
         </div>
-        <div class="info"> {{name}}</div>
+        <div class="info" *ngFor = "let abc of name"> 
+            <p>{{abc.product_name}}</p>
+            <p>{{abc.price}}</p>
+        </div>
     </div>
 
 </div>

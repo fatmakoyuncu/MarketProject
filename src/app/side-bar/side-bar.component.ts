@@ -33,19 +33,24 @@ export class SideBarComponent implements OnInit {
 
 
       const result = this.productList.filter(p => p.category_id == 1);
+
+      console.log(result[0]);
+      
       
       this.list = []
 
-      for (let i = 0; i < result.length; i++) {
+      // for (let i = 0; i < result.length; i++) {
 
-        this.list += result[i].product_name;
-      }
+      //   this.list += result[i].product_name + result[i].price;
+     
+      // }
+     
 
 
-        console.log(this.list);
+        // console.log(this.list);
 
 
-      this.event.emit(this.list)
+      this.event.emit(result)
 
 
 
