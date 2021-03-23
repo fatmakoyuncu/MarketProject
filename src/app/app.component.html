@@ -76,8 +76,8 @@
     <div class="side">
         <app-side-bar (event) = "fruitFromChild($event)"></app-side-bar>
     </div>
-    <div class="main">
-        <div class="content">
+    <div class="main" >
+        <div class="content" *ngIf = "show">
          
 
             <div class="main">
@@ -108,9 +108,9 @@
             </div>
         
         </div>
-        <div class="info" *ngFor = "let abc of name"> 
-            <p>{{abc.product_name}}</p>
-            <p>{{abc.price}}</p>
+        <div class="info" *ngFor = "let product of name"> 
+            <p>{{product.product_name}}</p>
+            <p>{{product.price}}</p>
         </div>
     </div>
 

@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  show: boolean = true;
   productArray: any
   name: any;
 product: any;
@@ -24,6 +26,7 @@ product: any;
 
 
   fruitFromChild(data) {
+    this.show = false;
     this.name = data
     console.log("sds" + data);
   }
