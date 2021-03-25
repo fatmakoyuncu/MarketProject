@@ -759,7 +759,7 @@
             </g>
         </svg>
     </div>
-    <div class="header" *ngFor = "let c of categoryList">
-        <p (click) = "clicked(c)">{{c.category_name}}</p>
+    <div class="header" (click)="clicked(c)"*ngFor = "let c of categoryList">
+        <p>{{c.category_name}}</p>
     </div>
 </div>

@@ -111,7 +111,7 @@
         <div class="info" *ngFor = "let product of name"> 
             <p>{{product.product_name}}</p>
             <p>{{product.price}}</p>
-            <p>{{product.img_path}}</p>
+            <img [src]="'http://localhost:5000/image/' + product.id" style="width: 90px; height: 90px;">
         </div>
     </div>
 
