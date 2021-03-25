@@ -31,6 +31,11 @@ product: any;
     console.log("sds" + data);
   }
 
+  showMain(){
+    this.show = true;
+  }
 
 }
+
+
 

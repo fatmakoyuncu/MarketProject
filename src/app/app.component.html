@@ -25,7 +25,7 @@
             </svg>
         </button>
     </div>
-    <div class="header">
+    <div class="header" (click)="showMain()">
         <h1>Sanal Market</h1>
     </div>
     <div class="search">
@@ -111,6 +111,7 @@
         <div class="info" *ngFor = "let product of name"> 
             <p>{{product.product_name}}</p>
             <p>{{product.price}}</p>
+            <p>{{product.img_path}}</p>
         </div>
     </div>
 
