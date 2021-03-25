@@ -10,10 +10,11 @@ export class SideBarComponent implements OnInit {
 
   @Output() event: EventEmitter<any> = new EventEmitter();
 
-  url = "http://localhost:5000/";
+  productURL = "http://localhost:5000/";
   categoryURL = "http://localhost:5000/categories";
   productList: any;
   categoryList: any;
+  imgList: any;
 
   constructor(private http: HttpClient) { }
 
@@ -22,11 +23,12 @@ export class SideBarComponent implements OnInit {
     this.http.get<any>(this.categoryURL).subscribe(data => {
       this.categoryList = data;     
     })
+
   }
 
   clicked(i) {
     
-    this.http.get<any>(this.url).subscribe(data => {
+    this.http.get<any>(this.productURL).subscribe(data => {
       this.productList = data;
 
       const result = this.productList.filter( p =>
@@ -34,7 +36,7 @@ export class SideBarComponent implements OnInit {
       
       this.event.emit(result)
       
-    })
+    })    
 
   }
 }

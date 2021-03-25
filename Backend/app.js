@@ -22,21 +22,31 @@ app.get('/categories', (req, res) => {
 })
 
 
-const product = async(id) => {
+const product = async (id) => {
     const result = await client.query(`SELECT product_name, price, img_path FROM products WHERE id = ${id}`)
     return result.rows
 }
 
-app.get('/image/:id', async(req,res) => {
-    const product_id= req.params.id
-    const product_info = await product(product_id)
-    fs.readFile(product_info[0].img_path, (err, data) =>{
-        if(err){
-            throw err
-        }
-        res.writeHead(200, {'Content-Type': 'image/jpg'})
-        res.end(data);
-    })
+app.get('/image/:id', async (req, res) => {
+    const product_id = req.params.id
+    const products = await product(product_id);
+    if (products.length !== 1) {
+        return res.json({ success: false, message: 'product not found' })
+    }
+    const product_info = products[0];
+    console.log(product_info);
+
+    // fs.readFile(product_info.img_path, (err, data) => {
+    //     if (err) {
+    //         throw err
+    //     }
+    //     res.writeHead(200, { 'Content-Type': 'image/jpg' })
+    //     res.end(data);
+    // })
+    res.set('Content-Type', 'image/jpg')
+    fs.createReadStream(product_info.img_path).pipe(res);
+
+
 })
 
 
