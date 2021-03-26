@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  show: boolean = true;
   productArray: any
   name: any;
-product: any;
+  product: any;
+  open: boolean = true;
 
   constructor(private http: HttpClient) { }
 
@@ -24,16 +24,17 @@ product: any;
 
   }
 
+  showClick() {
+    this.open = !this.open;
+    console.log(this.open);
+  }
 
   fruitFromChild(data) {
-    this.show = false;
+
     this.name = data
     console.log("sds" + data);
   }
 
-  showMain(){
-    this.show = true;
-  }
 
 }
 
