@@ -61,21 +61,10 @@
             </svg>
         </button>
     </div>
-    <div class="in">
-        <div class="singin">
-            <button>Üye Ol</button>
-        </div>
-        <hr />
-        <div class="login">
-            <button>Giriş Yap</button>
-        </div>
-    </div>
 </div>
 <div style="display: flex ;">
     <app-side-bar style="z-index:10;" *ngIf="!open" (event)="fruitFromChild($event)"></app-side-bar>
     <div class="container">
-        <!-- <div class="side" *ngIf="!open"> -->
-        <!-- </div> -->
         <div class="main">
             <div class="content">
                 <div class="main-in" *ngIf="!name">
